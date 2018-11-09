@@ -7,23 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
-    <script src="assets/javascript/game.js"></script>
+    
 </head>
 
 <body>
 
     <div id=container>
         <h1>Psychic Word Game</h1>
-            <div class="gameDisplay"> <p>GUESS WHAT LETTER I'M THINKING OF</p> </div>
-            <div class="gameDisplay"> <p>WINS</p> </div>
-            <div class="gameDisplay"> <p id="winCount"></p> </div>
-            <div class="gameDisplay"> <p>LOSSES</p> </div>
-            <div class="gameDisplay"> <p id="lossCount"></p> </div>
-            <div class="gameDisplay"> <p>REMAINING GUESSES</p> </div>
-            <div class="gameDisplay"> <p id="guessCount"></p> </div>
-            <div class="gameDisplay"> <p>LETTERS YOU'VE INCORRECTLY GUESSED:</p> </div>
-    </div>
+            <div> GUESS WHAT LETTER I'M THINKING OF </div>
 
+            <div> WINS </div>
+
+            <div id="winCount"> 0 </div>
+
+            <div> LOSSES </div>
+
+            <div id="lossCount"> 0 </div>
+
+            <div> REMAINING GUESSES </div>
+
+            <div id="guessCount"> 10 </div>
+
+            <div> LETTERS YOU'VE INCORRECTLY GUESSED: </div>
+
+            <div id="lettersGuessed"> </div>
+    </div>
+    
+    <script src="assets/javascript/game.js"></script>
 
 </body>
 </html>

@@ -1,22 +1,27 @@
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var winCount = 0;
 var lossCount = 0;
-var guessCount = 0;
-var guesses = [];
+var guessCount = 10;
+var lettersGuessed = [];
+
+var winCountText = document.getElementById("winCount");
+var lossCountText = document.getElementById("lossCount");
+var guessCountText = document.getElementById("guessCount");
+var lettersGuessedText = document.getElementById("lettersGuessed");
 
 
-document.onkeyup = function(event) {
+document.onkeyup = function (event) {
     var userGuess = event.key;
     var computerWord = letters[Math.floor(Math.random() * letters.length)];
 
-        if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") || (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") || (userGuess === "m") || (userGuess === "n") || (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") || (userGuess === "s") || (userGuess === "t") || (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x") || (userGuess === "y") || (userGuess === "z")) {
+        if (userGuess === computerWord){
+            winCountText.textContent = winCount + 1;
+        } else {
+            guessCount--;
+            guessCountText.textContent = guessCount - 1;
+            // wordsGuessed.push ++;
+            lettersGuessed.push (userGuess);
+            lettersGuessedText.textContent = lettersGuessed;
 
-            document.querySelector("winCount").innerHTML = winCount++;
-        };
+        }
 }
-
-
-
-
-
-console.log ()
