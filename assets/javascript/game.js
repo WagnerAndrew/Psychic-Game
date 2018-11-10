@@ -21,48 +21,50 @@ var computerLetter = randomLetter ();
     };
 
 
-document.onkeyup = function (event) {
+    document.onkeyup = function (event) {
 
-    var userGuessLower = event.key;
-    var userGuess = userGuessLower.toLowerCase();
-    console.log ("LETTER ARRAY: "+letters);
-    console.log ("USER GUESS :" +userGuess);
-    console.log ("LETTERS GUESSED :" +lettersGuessed);
-    console.log ("ComputerLetter: "+computerLetter);
-
-    // && lettersGuessed.indexOf(userGuess) <= 0
-    if (letters.indexOf(userGuess) < 0){
+        var userGuessLower = event.key;
+        var userGuess = userGuessLower.toLowerCase();
         
-        return;
-    } else if (userGuess === computerLetter){
-            winCount++;
-            winCountText.textContent = winCount ++;
-            lettersGuessed = [];
-            lettersGuessedText.textContent = lettersGuessed;
-            guessCount = 10;
-            guessCountText.textContent = guessCount;
-            randomLetter ();
-            computerLetter = randomLetter ()
-        } else {
-            guessCountText.textContent = guessCount - 1;
-            guessCount--;
-            lettersGuessed.push (userGuess);
-            lettersGuessedText.textContent = lettersGuessed;
+        if (letters.indexOf(userGuess) < 0){
+        } else
 
-        } 
-        
-    if (guessCount === 0) {
-        lossCount++ ;
-        lossCountText.textContent = lossCount;
-        guessCount = 10;
-        guessCountText.textContent = guessCount;
-        lettersGuessed = [];
-        lettersGuessedText.textContent = lettersGuessed;
-        randomLetter ();
-        computerLetter = randomLetter ();
+        {  if (userGuess === computerLetter){
+                winCount++;
+                winCountText.textContent = winCount ++;
+                lettersGuessed = [];
+                lettersGuessedText.textContent = lettersGuessed;
+                guessCount = 10;
+                guessCountText.textContent = guessCount;
+                randomLetter ();
+                computerLetter = randomLetter ()
+                
+            } else {
+                    if (guessCount === 0) {
+                        lossCount++ ;
+                        lossCountText.textContent = lossCount;
+                        guessCount = 10;
+                        guessCountText.textContent = guessCount;
+                        lettersGuessed = [];
+                        lettersGuessedText.textContent = lettersGuessed;
+                        randomLetter ();
+                        computerLetter = randomLetter ();
+
+                    }
+                   else {
+                    
+                     if (lettersGuessed.indexOf(userGuess)=== -1)
+                     {
+                       guessCount--;
+                       guessCountText.textContent = guessCount;
+                       lettersGuessed.push (userGuess);
+                       lettersGuessedText.textContent = lettersGuessed;
+                     }
+                     else { 
+                       alert("Letter Already guessed");
+                     }
+                   }
+            }
+        }
 
     }
-
-}
-
-
