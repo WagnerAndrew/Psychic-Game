@@ -1,11 +1,35 @@
 body {
-    box-sizing: border-box;
+    background: #277552;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
 }
 
-#container {
+
+.container {
     text-align: center;
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
 }
 
+h1 {
+    color: #003B20;
+    font-size: 4em;
+}
 
+h2 {
+    color: #0F5837;
+    font-size: 3em;
+    margin: .25em 0 .5em 0;
+}
+
+h3 {
+    color: #499371;
+    font-size: 2em;
+}
+
+h4 {
+    color: #75B095;
+    font-size: 1.5em;
+    margin: .5em 0;
+}

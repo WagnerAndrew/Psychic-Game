@@ -9,19 +9,59 @@ var lossCountText = document.getElementById("lossCount");
 var guessCountText = document.getElementById("guessCount");
 var lettersGuessedText = document.getElementById("lettersGuessed");
 
+// var computerLetter = "";
+var computerLetter = randomLetter ();
+
+function randomLetter (){
+    var randomLetterGenerator = letters[Math.floor(Math.random() * letters.length)];
+    // console.log ("Inside of randomLetter function it generates : " + randomLetterGenerator);
+    return randomLetterGenerator;
+    // return computerLetter;
+};
+
+// randomLetter ();
+
+// console.log ("Result of computerLetter: " + computerLetter);
+
+
 
 document.onkeyup = function (event) {
-    var userGuess = event.key;
-    var computerWord = letters[Math.floor(Math.random() * letters.length)];
+    var userGuessLower = event.key;
+    var userGuess = userGuessLower.toLowerCase();
+    
+    console.log("The computer letter is: " + computerLetter);
+    // console.log (userGuess);
+    // && userGuess === letters[indexOf] 
+    
+        if (userGuess === computerLetter) {
+            winCount++;
+            winCountText.textContent = winCount ++;
+            lettersGuessed = [""];
+            lettersGuessedText.textContent = lettersGuessed;
+            guessCount = 10;
+            guessCountText.textContent = guessCount; 
+            computerLetter = randomLetter ();
+            // console.log ("computer main process:" + computerLetter)
 
-        if (userGuess === computerWord){
-            winCountText.textContent = winCount + 1;
         } else {
-            guessCount--;
             guessCountText.textContent = guessCount - 1;
-            // wordsGuessed.push ++;
+            guessCount--;
             lettersGuessed.push (userGuess);
             lettersGuessedText.textContent = lettersGuessed;
 
+        } 
+        
+         if (guessCount === 0) {
+            lossCount++ ;
+            lossCountText.textContent = lossCount;
+            guessCount = 10;
+            guessCountText.textContent = guessCount;
+            lettersGuessed = [""];
+            lettersGuessedText.textContent = lettersGuessed;
+            computerLetter = randomLetter ();
+
         }
+
 }
+
+
