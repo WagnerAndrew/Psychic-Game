@@ -61,7 +61,7 @@ var computerLetter = randomLetter ();
                        lettersGuessedText.textContent = lettersGuessed;
                      }
                      else { 
-                       alert("Letter Already guessed");
+                       alert("You already guessed that letter!");
                      }
                    }
             }
